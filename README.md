@@ -1,29 +1,8 @@
-# Client Management API CRUD Project
+# Client Management Project
 
 ## Description
 
-This project is an API developed in Java that implements CRUD operations for client management. The system leverages **DTOs** (Data Transfer Objects) and **DAOs** (Data Access Objects) to efficiently structure and manage data. Additionally, the project includes:
+This project is an API developed in Java that implements CRUD operations for client management. The project includes:
 
-- Use of **Postman** and **Swagger** for testing.
-- Implementation of **custom exception handling**.
-- Data persistence in a simple database.
-- Docker compose.yml to create a local repository of PostgreSQL (it is necessary to have docker or rancher in your PC)
-- Login system
-
-## Key Features
-
-- **Complete CRUD functionality**: Create, Read, Update, and Delete tasks.
-- **DTOs and DAOs**: Modular architecture for data transfer and access.
-- **Swagger UI**: Interactive API documentation for easier use.
-- **Postman**: Test collection to validate CRUD operations.
-- **Exception Handling**: Clear and custom error responses.
-- **Simple Database Persistence**: Data storage with a straightforward approach.
-
-## Technologies Used
-
-- **Java**: Primary programming language.
-- **Spring Boot**: Framework for web application development.
-- **JPA/Hibernate**: For database interaction.
-- **PostgreSQL**: Database for simplicity.
-- **Swagger**: Automatic API documentation generation.
-- **Postman**: API testing tool.
+- **Backend** with a CRUD and all the management of the Clients with a PostgreSQL database.
+- Simple **frontend** for the testing of the application.
