@@ -20,14 +20,20 @@ public class Client {
     @Valid
     UUID idClient;
 
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "username")
     @NotNull
     @Valid
-    String name;
+    String username;
 
     @JsonProperty(value = "surname")
     @Valid
     String surname;
+
+    @JsonProperty(value = "password")
+    String password;
+
+    @JsonProperty(value = "role")
+    String role;
 
     @JsonProperty(value = "number", required = true)
     @Valid
