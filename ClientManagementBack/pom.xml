@@ -107,5 +107,17 @@
       <version>5.15.2</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.webjars.npm</groupId>
+      <artifactId>jsonwebtoken</artifactId>
+      <version>8.5.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+      <version>3.4.2</version>
+    </dependency>
+
   </dependencies>
 </project>
