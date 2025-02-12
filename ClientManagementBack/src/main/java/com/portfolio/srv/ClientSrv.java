@@ -6,6 +6,8 @@ import com.portfolio.repositories.ClientRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.stream.Stream;
+
 @AllArgsConstructor
 @Service
 public class ClientSrv implements ClientApi {
@@ -15,5 +17,10 @@ public class ClientSrv implements ClientApi {
     @Override
     public void createClient(Client client) {
         clientRepository.save(client);
+    }
+
+    @Override
+    public Stream<Client> getClients() {
+        return clientRepository.findAll().stream();
     }
 }
