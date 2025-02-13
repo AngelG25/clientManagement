@@ -31,7 +31,7 @@ public class ClientDao {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(nullable = false)
+    @Column(name = "role", nullable = false)
     private String role;
 
     @Column(name = "number", unique = true)
