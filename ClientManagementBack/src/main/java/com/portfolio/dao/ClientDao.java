@@ -10,7 +10,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.Instant;
 import java.util.UUID;
 
-@Entity
+@Entity                         // Marks the object as Jpa to be saved in the database
 @NoArgsConstructor              // Necessary for the build in the get API
 @Getter
 @Setter
