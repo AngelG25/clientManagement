@@ -45,6 +45,15 @@ public class ClientSrv implements ClientApi {
 
     @Override
     public void updateClient(Client client) {
+        clientRepository.findById(client.getIdClient())
+                .orElseThrow(() -> new ClientNotFoundException(CLIENT_ID + client.getIdClient() + NOT_FOUND));
+        clientRepository.save(clientMapper.toClientDao(client));
+    }
 
+    @Override
+    public void deleteClient(String idClient) {
+        clientRepository.findById(UUID.fromString(idClient))
+                .orElseThrow(() -> new ClientNotFoundException(CLIENT_ID + idClient + NOT_FOUND));
+        clientRepository.deleteById(UUID.fromString(idClient));
     }
 }

@@ -39,6 +39,11 @@ public class ClientRest {
 
     @PutMapping("/updateClient")
     public void updateClient(Client client) {
+        clientApi.updateClient(client);
+    }
 
+    @DeleteMapping("/deleteClient")
+    public void deleteClient(String idClient) {
+        clientApi.deleteClient(idClient);
     }
 }

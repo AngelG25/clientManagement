@@ -13,4 +13,6 @@ public interface ClientApi {
     Client getClient(String clientId);
 
     void updateClient(Client client);
+
+    void deleteClient(String idClient);
 }
