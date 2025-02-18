@@ -7,6 +7,7 @@ import com.portfolio.dao.ClientDao;
 import com.portfolio.repositories.ClientRepository;
 import com.portfolio.srv.utils.ClientMapper;
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.UUID;
 
 @AllArgsConstructor
 @Service
+@Log4j2
 public class ClientSrv implements ClientApi {
 
     private final ClientRepository clientRepository;
@@ -24,6 +26,7 @@ public class ClientSrv implements ClientApi {
 
     @Override
     public void createClient(Client client) {
+        log.info("Creating user...");
         final ClientDao clientDao = clientMapper.toClientDao(client);
         clientRepository.save(clientDao);
     }
@@ -45,6 +48,7 @@ public class ClientSrv implements ClientApi {
 
     @Override
     public void updateClient(Client client) {
+        log.info("Updating client..");
         clientRepository.findById(client.getIdClient())
                 .orElseThrow(() -> new ClientNotFoundException(CLIENT_ID + client.getIdClient() + NOT_FOUND));
         clientRepository.save(clientMapper.toClientDao(client));
