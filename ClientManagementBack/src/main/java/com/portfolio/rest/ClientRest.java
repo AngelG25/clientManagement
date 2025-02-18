@@ -38,12 +38,17 @@ public class ClientRest {
     }
 
     @PutMapping("/updateClient")
-    public void updateClient(Client client) {
+    public void updateClient(@RequestBody Client client) {
         clientApi.updateClient(client);
     }
 
-    @DeleteMapping("/deleteClient")
-    public void deleteClient(String idClient) {
+    @DeleteMapping("/deleteClient/{idClient}")
+    public void deleteClient(@PathVariable("idClient") String idClient) {
         clientApi.deleteClient(idClient);
+    }
+
+    @GetMapping("/getClientById/{idClient}")
+    public Client getClientById(@PathVariable("idClient") String idClient) {
+        return clientApi.getClient(idClient);
     }
 }
