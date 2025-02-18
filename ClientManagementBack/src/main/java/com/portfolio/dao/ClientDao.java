@@ -28,12 +28,6 @@ public class ClientDao {
     @Column(name = "surname", updatable = false)
     private String surname;
 
-    @Column(name = "password", nullable = false)
-    private String password;
-
-    @Column(name = "role", nullable = false)
-    private String role;
-
     @Column(name = "number", unique = true)
     private int number;
 

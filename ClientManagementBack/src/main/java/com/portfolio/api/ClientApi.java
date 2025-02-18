@@ -2,11 +2,15 @@ package com.portfolio.api;
 
 import com.portfolio.api.models.Client;
 
-import java.util.stream.Stream;
+import java.util.List;
 
 public interface ClientApi {
 
     void createClient(Client client);
 
-    Stream<Client> getClients();
+    List<Client> getClients();
+
+    Client getClient(String clientId);
+
+    void updateClient(Client client);
 }

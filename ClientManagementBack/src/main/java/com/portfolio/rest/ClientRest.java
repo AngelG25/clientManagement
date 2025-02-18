@@ -6,11 +6,9 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.stream.Stream;
 
 @RestController
@@ -34,8 +32,13 @@ public class ClientRest {
     }
 
     @ApiResponse(responseCode = "200", description = "Tasks returned correctly")
-    @GetMapping("/getTasks")
-    public Stream<Client> getTasks() {
+    @GetMapping("/getClients")
+    public List<Client> getClients() {
         return clientApi.getClients();
+    }
+
+    @PutMapping("/updateClient")
+    public void updateClient(Client client) {
+
     }
 }

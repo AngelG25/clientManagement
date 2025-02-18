@@ -29,12 +29,6 @@ public class Client {
     @Valid
     String surname;
 
-    @JsonProperty(value = "password")
-    String password;
-
-    @JsonProperty(value = "role")
-    String role;
-
     @JsonProperty(value = "number", required = true)
     @Valid
     int number;
