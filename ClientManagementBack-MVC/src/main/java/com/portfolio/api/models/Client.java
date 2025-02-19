@@ -1,22 +1,31 @@
 package com.portfolio.api.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.Valid;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Value;
+import lombok.*;
 import lombok.extern.jackson.Jacksonized;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.jetbrains.annotations.NotNull;
 
 import java.time.Instant;
 import java.util.UUID;
 
 @Builder(toBuilder = true)
+@Entity
 @Value
-@Jacksonized        // Allows jackson to deserialize the object sent from Postman
+@AllArgsConstructor
+@NoArgsConstructor(force = true)        // Necessary for the dataBase
+@Jacksonized
 public class Client {
 
     @JsonProperty(value = "idClient")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Valid
     UUID idClient;
 
@@ -41,10 +50,12 @@ public class Client {
     @JsonProperty(value = "creationDate")
     @Valid
     @EqualsAndHashCode.Exclude
+    @CreationTimestamp
     Instant creationDate;
 
     @JsonProperty(value = "updateDate")
     @Valid
     @EqualsAndHashCode.Exclude
+    @UpdateTimestamp
     Instant updateDate;
 }
